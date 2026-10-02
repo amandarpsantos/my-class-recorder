@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "My Class Recorder",
+  "description": "TeachAssist capture engine with immediate next-class recording, single-audio Deepgram transcription, persistent recovery, and smart cleanup.",
+  "version": "0.5.7",
+  "action": {
+    "default_title": "My Class Recorder",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "tabCapture",
+    "offscreen",
+    "downloads",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "https://teams.microsoft.com/*",
+    "https://teams.live.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.deepgram.com/*"
+  ],
+  "commands": {
+    "start-meetings-recording": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      },
+      "description": "Start or stop class recording"
+    },
+    "start-meetings-recording-space": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space"
+      },
+      "description": "Start or stop class recording"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://teams.microsoft.com/*",
+        "https://teams.live.com/*"
+      ],
+      "js": [
+        "inject-microphone-frame.js",
+        "meeting-title-reader.js",
+        "meeting-end-watcher.js",
+        "recording-reminder.js",
+        "hotkey-listener.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "microphone-sources.html",
+        "microphone-sources.js"
+      ],
+      "matches": [
+        "https://meet.google.com/*",
+        "https://teams.microsoft.com/*",
+        "https://teams.live.com/*"
+      ]
+    }
+  ]
+}

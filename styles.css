@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  color: #111827;
+}
+
+.popup {
+  width: 280px;
+  padding: 16px;
+}
+
+.popup h1 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+.status {
+  font-size: 14px;
+  color: #374151;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.transcript-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.transcript-header {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.transcript-header h1 {
+  margin: 0 0 8px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  min-width: 340px;
+}
+
+.button-row button {
+  margin-top: 0;
+}
+
+.transcript-container {
+  display: grid;
+  gap: 14px;
+}
+
+.speaker-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.speaker-card h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #2563eb;
+}
+
+.timestamp {
+  margin: 4px 0 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.utterance-text {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+.plain-transcript {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 720px) {
+  .transcript-header {
+    display: block;
+  }
+
+  .button-row {
+    display: block;
+    min-width: 0;
+  }
+
+  .button-row button {
+    margin-top: 10px;
+  }
+}
+.provider-settings[hidden] {
+  display: none;
+}

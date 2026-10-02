@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Class Recorder Setup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>My Class Recorder Setup</h1>
+
+      <p>
+        Choose a transcription provider and add its API key. You can change providers later.
+      </p>
+
+      <label for="transcriptionProvider">Transcription Provider</label>
+      <select id="transcriptionProvider">
+        <option value="deepgram">Deepgram</option>
+        <option value="gemini">Gemini</option>
+      </select>
+
+      <div id="deepgramSettings" class="provider-settings">
+        <label for="deepgramApiKey">Deepgram API Key</label>
+        <input id="deepgramApiKey" type="password" placeholder="Paste Deepgram API key">
+      </div>
+
+      <div id="geminiSettings" class="provider-settings">
+        <label for="geminiApiKey">Gemini API Key</label>
+        <input id="geminiApiKey" type="password" placeholder="Paste Gemini API key">
+      </div>
+
+      <label for="transcriptSaveEndpoint">Transcript Save Endpoint URL</label>
+      <input id="transcriptSaveEndpoint" type="text" placeholder="Optional Base44 endpoint URL">
+
+      <label for="transcriptSaveToken">Transcript Save Token</label>
+      <input id="transcriptSaveToken" type="password" placeholder="Optional shared secret token">
+
+      <button id="saveBtn">Save Setup</button>
+
+      <p id="status" class="status"></p>
+    </section>
+  </main>
+
+  <script src="setup.js"></script>
+</body>
+</html>

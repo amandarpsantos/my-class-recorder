@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Reprocess Saved Recordings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Reprocess Saved Recordings</h1>
+      <p class="muted">Choose the original microphone and meeting-audio files. At least one audio file is required.</p>
+
+      <label for="studentName">Student name</label>
+      <input id="studentName" type="text" placeholder="Student name">
+
+      <label for="meetingTitle">Lesson title</label>
+      <input id="meetingTitle" type="text" placeholder="Class or meeting title">
+
+      <label for="classProgram">Class program (optional)</label>
+      <input id="classProgram" type="text" placeholder="Program or course">
+
+      <label for="micFile">Teacher microphone file</label>
+      <input id="micFile" type="file" accept="audio/*,.webm">
+
+      <label for="tabFile">Student / meeting audio file</label>
+      <input id="tabFile" type="file" accept="audio/*,.webm">
+
+      <button id="reprocessBtn">Reprocess Recording</button>
+      <p id="status" class="status">Ready.</p>
+    </section>
+  </main>
+  <script src="reprocess.js"></script>
+</body>
+</html>
